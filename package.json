@@ -1,0 +1,32 @@
+{
+  "name": "attraction-in-cities",
+  "version": "1.0.0",
+  "description": "just a simple test",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://marcopestrin@github.com/marcopestrin/attraction-in-cities.git"
+  },
+  "keywords": [
+    "openweathermap",
+    "yelp"
+  ],
+  "type": "module",
+  "author": "Marco Pestrin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcopestrin/attraction-in-cities/issues"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "node-fetch": "^3.0.0",
+    "nodemon": "^2.0.12"
+  },
+  "homepage": "https://github.com/marcopestrin/attraction-in-cities#readme"
+}
