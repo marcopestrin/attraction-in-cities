@@ -11,10 +11,10 @@ const getData = async(url, headers) => {
             success: true,
             payload: await result.json()
         }
-    } catch(error) {
+    } catch(payload) {
         return {
             success: false,
-            payload: error
+            payload
         }
     }
 
@@ -25,8 +25,8 @@ export const getWeatherByCity = async(city) => {
         const queryString = `?q=${city}&appId=${config.openWeatherMapAppKey}`;
         const url = `https://api.openweathermap.org/data/2.5/weather${queryString}`;
         const { payload, success } = await getData(url);
-        if (success && payload.weather) {
-            const { weather, main } = payload;
+        const { weather, main } = payload;
+        if (success && weather && main) {
             return {
                 "description": weather.map((item) => item.description),
                 "tempMin": main.temp_min,
@@ -52,15 +52,15 @@ export const getBusinessesByCity = async(city) => {
                 throw payload.error.description;
             }
             return await payload.businesses
-            .slice(0, config.maxBusinessesToShow)
-            .map((business) => {
-                const { name, categories, location } = business;
-                return {
-                    name,
-                    "categories": categories.map((category) => category.title),
-                    "location": location.address1
-                }
-            }) 
+                .slice(0, config.maxBusinessesToShow)
+                .map((business) => {
+                    const { name, categories, location } = business;
+                    return {
+                        name,
+                        "categories": categories.map((category) => category.title),
+                        "location": location.address1
+                    }
+                }) 
         }
         throw payload
     } catch(error) {
