@@ -1,12 +1,12 @@
 # Attractions in some cities
-A simple web application made by Express Framework to test the APIs of OpenWeatherMap and Yelp
+A simple web application made by `Express` framework to test the APIs of `OpenWeatherMap` and `Yelp`.
 
 ## Focus
 
 ## Features
 
 # Requirements
-- nodeJS v14.5.0
+- nodeJS `v14.5.0`
 ## Getting Started
 Install all dependencies with the follow command:
 ```bash
@@ -26,6 +26,7 @@ In the root of project create a file named `.env` with the following keys:
 YELP_AUTHORIZATION=
 OPEN_WEATHER_MAP_APP_KEY=
 ```
+The values of these keys will be the authorization tokens of the third party services.
 
 ## Example
 
