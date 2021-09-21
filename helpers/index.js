@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-import { maxBusinessesToShow } from "../settings.js";
+import config  from "../settings.js";
 
 const getData = async(url, headers) => {
     try {
@@ -22,10 +22,10 @@ const getData = async(url, headers) => {
 
 export const getWeatherByCity = async(city) => {
     try {
-        const queryString = `?q=${city}&appId=${process.env.OPEN_WEATHER_MAP_APP_KEY}`;
+        const queryString = `?q=${city}&appId=${config.openWeatherMapAppKey}`;
         const url = `https://api.openweathermap.org/data/2.5/weather${queryString}`;
         const { payload, success } = await getData(url);
-        if (success) {
+        if (success && payload.weather) {
             const { weather, main } = payload;
             return {
                 "description": weather.map((item) => item.description),
@@ -44,16 +44,15 @@ export const getWeatherByCity = async(city) => {
 }
 export const getBusinessesByCity = async(city) => {
     try {
-        const headers = { "Authorization": `Bearer ${process.env.YELP_AUTHORIZATION}`};
+        const headers = { "Authorization": `Bearer ${config.yelpAuthorization}`};
         const url = `https://api.yelp.com/v3/businesses/search?location=${city}`;
         const { success, payload } = await getData(url, headers);
         if (success) {
             if (payload.error) {
                 throw payload.error.description;
-                return
             }
             return await payload.businesses
-            .slice(0, maxBusinessesToShow)
+            .slice(0, config.maxBusinessesToShow)
             .map((business) => {
                 const { name, categories, location } = business;
                 return {
@@ -65,7 +64,6 @@ export const getBusinessesByCity = async(city) => {
         }
         throw payload
     } catch(error) {
-        // console.log({ error })
         return {
             failure: true,
             error
