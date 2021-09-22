@@ -2,8 +2,18 @@
 A simple web application made by `Express` framework to test the APIs of `OpenWeatherMap` and `Yelp`.
 
 ## Focus
-
+Develop a simple server that in turn invokes third-party APIs by manipulating the data.
 ## Features
+The following cases were tested
+- missing or incorrect tokens
+- misspelled cities
+- wrong third-party APIs path
+- incorrect primary endpoint input
+
+## more informations
+- There isn't defined number of input cities to put, but the code has been tested up to 5 cities (sydney, london, boston, paris, osaka).
+- The number of businesses to display has been limited to 5. This setting can be changed from the `settings.js` file.
+- A simple input validator has been added: [Joi](https://joi.dev/api/)
 
 # Requirements
 - nodeJS `v14.5.0`
@@ -29,7 +39,7 @@ OPEN_WEATHER_MAP_APP_KEY=
 The values of these keys will be the authorization tokens of the third party services.
 
 ## Example
-After started and setted the app the following endpoint will be exposed
+After started and setted the app the following endpoint (`GET` method) will be exposed
 ```bash
 /getInformations
 ```
