@@ -35,13 +35,13 @@ After started and setted the app the following endpoint will be exposed
 ```
 this endpoint needs to have input cities as querystring like this
 ```bash
-http://localhost:3000/getInformations?cities=sydney,london,boston
+http://localhost:3000/getInformations?cities=sydney
 ```
 the answer will be similar to:
 ```json
 [
     {
-        "city": "",
+        "city": "sydney",
         "businesses": [{
             "name": "Social Brew Cafe",
             "categories": [ "Cafes", "Breakfast & Brunch", "Coffee & Tea" ],
@@ -56,6 +56,11 @@ the answer will be similar to:
     }
 ]
 ```
+you can also get informations of more cities separating it by commas like
+```bash
+http://localhost:3000/getInformations?cities=sydney,london,boston
+```
+
 
 ## Author
 Marco Pestrin (pestrinmarco@gmail.com)
