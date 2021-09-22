@@ -1,6 +1,6 @@
 {
   "name": "attraction-in-cities",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "just a simple test",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,9 @@
     "express": "^4.17.1",
     "joi": "^17.4.2",
     "node-fetch": "^3.0.0",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6"
   },
   "homepage": "https://github.com/marcopestrin/attraction-in-cities#readme"
 }

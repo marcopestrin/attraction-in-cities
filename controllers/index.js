@@ -1,5 +1,26 @@
 import { getWeatherByCity, getBusinessesByCity } from "../helpers/index.js";
 
+/**
+ * @swagger
+ * /getInformations:
+ *   get:
+ *      summary: Get all informations about weather and businesses by cities
+ *      tags: [City]
+ * 
+ *      parameters:
+ *      - in: query
+ *        name: cities
+ *        required: true
+ * 
+ *      responses:
+ *        200:
+ *          description: All good
+
+ *        500:
+ *          description: Something wrong
+ *
+ */
+
 export const getInformations = async(req, res) => {
     const { cities } = req.query;
     const citiesList = cities.split(",");

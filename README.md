@@ -13,7 +13,10 @@ The following cases were tested
 ### more informations
 - There isn't defined number of input cities to put, but the code has been tested up to 5 cities (sydney, london, boston, paris, osaka).
 - The number of businesses to display has been limited to 5. This setting can be changed from the `settings.js` file.
-- A simple input validator has been added: [Joi](https://joi.dev/api/)
+- A simple input validator has been added: [Joi](https://joi.dev/api/).
+- You can have more informations about the endpoint by **browser** at the follow address `/api-docs`. You can also test them on the endpoint by entering the cities as input and clicking on **Execute**
+
+![Screenshot](screenshot-swagger.png)
 
 # Requirements
 - nodeJS `v14.5.0`
