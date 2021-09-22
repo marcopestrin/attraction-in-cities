@@ -5,12 +5,12 @@ A simple web application made by `Express` framework to test the APIs of `OpenWe
 Develop a simple server that in turn invokes third-party APIs by manipulating the data.
 ## Features
 The following cases were tested
-- missing or incorrect tokens
-- misspelled cities
-- wrong third-party APIs path
-- incorrect primary endpoint input
+- Missing or incorrect tokens
+- Misspelled cities
+- Wrong third-party APIs path
+- Incorrect primary endpoint input
 
-## more informations
+### more informations
 - There isn't defined number of input cities to put, but the code has been tested up to 5 cities (sydney, london, boston, paris, osaka).
 - The number of businesses to display has been limited to 5. This setting can be changed from the `settings.js` file.
 - A simple input validator has been added: [Joi](https://joi.dev/api/)
